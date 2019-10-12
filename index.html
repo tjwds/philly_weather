@@ -1,0 +1,55 @@
+<style type="text/css">
+body {
+  margin: 0;
+  background: black;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+div {
+  height: 50vh;
+  width: 50%;
+  float: left;
+  display: inline;
+}
+#sounding, #precip, #mlsp_wind {
+  filter: invert(1);
+}
+</style>
+
+<div>
+  <img id="mlsp_wind"></img>
+</div>
+<div>
+  <img id="wttr" src="https://wttr.in/Philadelphia_m.png"></img>
+</div>
+<div>
+  <img id="precip"></img>
+</div>
+<div>
+  <img id="sounding"></img>
+</div>
+
+<script type="text/javascript">
+  var date = new Date()
+  var date_utc_string = date.getUTCFullYear().toString() + (date.getUTCMonth() + 1).toString().padStart(2, '0') + date.getUTCDate().toString().padStart(2, '0')
+  // 00z 006z 12z 18z
+  if (date.getUTCHours() > 22 || date.getUTCHours() < 4) {
+    date_utc_string += "18"
+  } else if (date.getUTCHours() > 16) {
+    date_utc_string += "12"
+  } else if (date.getUTCHours() > 10) {
+    date_utc_string += "06"
+  } else {
+    date_utc_string += "00"
+  }
+
+  var sounding = `https://tropicaltidbits.com/analysis/models/sounding/images/gfs_${date_utc_string}_fh6_sounding_39.93N_75.17W.png`
+  var precip = `https://tropicaltidbits.com/analysis/models/gfs/${date_utc_string}/gfs_mslp_pcpn_frzn_neus_1.png`
+  var mlsp_wind = `https://tropicaltidbits.com/analysis/models/gfs/${date_utc_string}/gfs_mslp_wind_neus_2.png`
+
+  document.getElementById("sounding").src = sounding;
+  document.getElementById("precip").src = precip;
+  document.getElementById("mlsp_wind").src = mlsp_wind;
+</script>
