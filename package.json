@@ -1,0 +1,22 @@
+{
+  "name": "philly_weather",
+  "version": "1.0.0",
+  "description": "Make a l33t homepage",
+  "main": "passthrough.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjwds/philly_weather.git"
+  },
+  "author": "tjwds",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjwds/philly_weather/issues"
+  },
+  "homepage": "https://github.com/tjwds/philly_weather#readme",
+  "dependencies": {
+    "curl-request": "^1.1.1"
+  }
+}
