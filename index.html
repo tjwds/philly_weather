@@ -19,16 +19,18 @@ div {
 </style>
 
 <div>
-  <img id="mlsp_wind"></img>
+  <img id="mlsp_wind" />
 </div>
 <div>
-  <img id="wttr" src="https://wttr.in/Philadelphia_m.png"></img>
+  <img id="wttr" src="https://wttr.in/Philadelphia_m.png" />
 </div>
 <div>
-  <img id="precip"></img>
+  <img id="precip" />
 </div>
 <div>
-  <img id="sounding"></img>
+  <a id="sounding-link" href="#">
+    <img id="sounding" />
+  </a>
 </div>
 
 <script type="text/javascript">
@@ -45,11 +47,17 @@ div {
     date_utc_string += "00"
   }
 
+  // need to actually request the page that will generate the sounding before the image exists.
+
   var sounding = `https://tropicaltidbits.com/analysis/models/sounding/images/gfs_${date_utc_string}_fh6_sounding_39.93N_75.17W.png`
+  var sounding_link = `https://tropicaltidbits.com/analysis/models/sounding/?model=gfs&runtime=${date_utc_string}&fh=6&lat=39.93&lon=-75.17&stationID=&tc=&mode=regular`
+  document.getElementById("sounding").src = sounding;
+  document.getElementById("sounding-link").href = sounding_link;
+
+
   var precip = `https://tropicaltidbits.com/analysis/models/gfs/${date_utc_string}/gfs_mslp_pcpn_frzn_neus_1.png`
   var mlsp_wind = `https://tropicaltidbits.com/analysis/models/gfs/${date_utc_string}/gfs_mslp_wind_neus_2.png`
 
-  document.getElementById("sounding").src = sounding;
   document.getElementById("precip").src = precip;
   document.getElementById("mlsp_wind").src = mlsp_wind;
 </script>
