@@ -7,29 +7,44 @@ img {
   width: 100%;
   height: 100%;
 }
-div {
-  height: 50vh;
+.sixty {
+  height: 55vh;
   width: 50%;
+  float: left;
+  display: inline;
+}
+.fourty {
+  height: 45vh;
+  width: 33.333%;
   float: left;
   display: inline;
 }
 #sounding, #precip, #mlsp_wind {
   filter: invert(1);
 }
+
+#air_qual {
+  filter: hue-rotate(90deg) grayscale(90%) invert(1) brightness(0.8);
+}
 </style>
 
-<div>
-  <img id="mlsp_wind" />
+<div class="sixty">
+  <a target="_blank" id="sounding-link" href="#">
+    <img id="sounding" />
+  </a>
 </div>
-<div>
+<div class="sixty">
   <img id="wttr" src="https://wttr.in/Philadelphia_m.png" />
 </div>
-<div>
+<div class="fourty">
   <img id="precip" />
 </div>
-<div>
-  <a id="sounding-link" href="#">
-    <img id="sounding" />
+<div class="fourty">
+  <img id="mlsp_wind" />
+</div>
+<div class="fourty">
+  <a target="_blank" href="https://files.airnowtech.org/airnow/today/cur_aqi_philadelphia_pa.jpg">
+    <img id="air_qual" src="https://files.airnowtech.org/airnow/today/cur_aqi_philadelphia_pa.jpg" />
   </a>
 </div>
 
