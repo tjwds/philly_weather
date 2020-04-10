@@ -39,30 +39,17 @@ img {
 }
 
 .row-one {
-  width: 100%;
-  height: 50%;
-  float: left;
-}
-.row-one div {
-  width: 50%;
-  height: auto;
-  float: left;
-}
-
-.row-two {
-  /* so bad but it works */
   height: 50%;
   width: max-content;
   margin: 0 auto;
-  padding-top: 50vh;
 }
-.row-two div {
+.row-one div {
   float: left;
 }
-.row-two .goes {
+.row-one .goes {
   width: 50vh;
 }
-.row-two img {
+.row-one img {
   width: auto;
 }
 .uptime {
@@ -73,9 +60,19 @@ img {
   height: 100%;
   align-items: center;
 }
-
 li {
   word-break: break-word;
+}
+
+.row-two {
+  width: 100%;
+  height: 50%;
+  float: left;
+}
+.row-two div {
+  width: 50%;
+  height: auto;
+  float: left;
 }
 </style>
 
@@ -95,16 +92,6 @@ li {
 
 <div class="col-two">
   <div class="row-one">
-    <div>
-      <a target="_blank" id="sounding-link" href="#">
-        <img id="sounding" />
-      </a>
-    </div>
-    <div>
-      <img id="wttr" src="https://wttr.in/Philadelphia_m.png" />
-    </div>
-  </div>
-  <div class="row-two">
     <div class="goes">
       <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/678x678.jpg" /></a>
     </div>
@@ -114,6 +101,16 @@ li {
             <li class="uptime--failbetter">checking failbetter.com</li>
             <li class="uptime--portfolio">checking joewoodsworks.com</li>
         </ul>
+    </div>
+  </div>
+  <div class="row-two">
+    <div>
+      <a target="_blank" id="sounding-link" href="#">
+        <img id="sounding" />
+      </a>
+    </div>
+    <div>
+      <img id="wttr" src="https://wttr.in/Philadelphia_m.png" />
     </div>
   </div>
 </div>
