@@ -40,25 +40,30 @@ img {
 
 .row-one {
   height: 50%;
-  width: max-content;
+  width:100%;
   margin: 0 auto;
 }
 .row-one div {
   float: left;
 }
 .row-one .goes {
-  width: 50vh;
+  width: 100%;
+  text-align: center;
 }
 .row-one img {
+  text-align: center;
   width: auto;
 }
 .uptime {
-  display: flex;
   text-align: left;
   margin: 0 auto;
-  justify-content: center;
-  height: 100%;
-  align-items: center;
+  position: absolute;
+  z-index: 2;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  padding: 1em;
 }
 li {
   word-break: break-word;
@@ -93,6 +98,7 @@ li {
 <div class="col-two">
   <div class="row-one">
     <div class="goes">
+      <a href="https://cdn.star.nesdis.noaa.gov/GOES17/ABI/FD/GEOCOLOR/1808x1808.jpg"><img src="https://cdn.star.nesdis.noaa.gov/GOES17/ABI/FD/GEOCOLOR/678x678.jpg" /></a>
       <a href="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/1808x1808.jpg"><img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/678x678.jpg" /></a>
     </div>
     <div class="uptime">
