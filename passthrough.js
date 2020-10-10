@@ -14,9 +14,9 @@ const ping_tt = () => {
   } else {
     date_utc_string += "00"
   }
-  
+
   var sounding_link = `https://tropicaltidbits.com/analysis/models/sounding/?model=gfs&runtime=${date_utc_string}&fh=6&lat=39.93&lon=-75.17&stationID=&tc=&mode=regular`
-  
+
   curl.setHeaders([
       'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'
   ])
