@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/tjwds/philly_weather#readme",
   "dependencies": {
-    "curl-request": "^1.1.1"
+    "node-fetch": "^2.6.1"
   }
 }

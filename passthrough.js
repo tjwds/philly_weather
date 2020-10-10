@@ -1,4 +1,10 @@
-const curl = new (require( 'curl-request' ))();
+const nodeFetch = require('node-fetch')
+
+const fetch = (url, args = {}) => {
+  args.headers = args.headers || {}
+  args.headers['user-agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36';
+  return nodeFetch(url, args)
+}
 const interval = 30 * 60 * 1000; // once every 30 minutes
 
 const ping_tt = () => {
@@ -17,16 +23,7 @@ const ping_tt = () => {
 
   var sounding_link = `https://tropicaltidbits.com/analysis/models/sounding/?model=gfs&runtime=${date_utc_string}&fh=6&lat=39.93&lon=-75.17&stationID=&tc=&mode=regular`
 
-  curl.setHeaders([
-      'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'
-  ])
-  .get(sounding_link)
-  .then(({statusCode, body, headers}) => {
-      console.log("success");
-  })
-  .catch((e) => {
-      console.log(e);
-  });
+  fetch(sounding_link).catch((e) => { console.log(e); });
 }
 
 ping_tt(); // do it once on startup.
