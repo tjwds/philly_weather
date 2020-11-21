@@ -130,7 +130,7 @@ li {
 
 <script type="text/javascript">
   var date = new Date()
-  var date_utc_string = date.getUTCFullYear().toString() + (date.getUTCMonth() + 1).toString().padStart(2, '0') + date.getUTCDate().toString().padStart(2, '0')
+  var date_utc_string = date.getUTCFullYear().toString() + (date.getUTCMonth() + 1).toString().padStart(2, '0') + date.getDate().toString().padStart(2, '0')
   // 00z 006z 12z 18z
   if (date.getUTCHours() > 22 || date.getUTCHours() < 4) {
     date_utc_string += "18"
